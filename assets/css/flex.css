@@ -1,0 +1,90 @@
+@import 'reset.css';
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > .container {
+        display: flex;
+        /* flex-direction: row-reverse; */
+        justify-content: space-around;
+        align-items: center;
+        /* flex-wrap: wrap; */
+        flex-flow: row-reverse wrap;
+        width: 50%;
+        height: auto;
+        min-height: 500px;
+        background-color: rgb(194, 192, 192);
+        border: solid 1px rgb(11, 11, 133);
+        & > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px #000;
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.color-4 {
+    /* order diferente das outras propriedades deve ser aplicado,
+    ao elemento filho, ou seja o que nós chamamos de Flex item 
+    align-self, permite o elemento filho ter próprio alinhamento
+    diferente do container*/
+    /* order: 1; */
+    /* align-self: flex-start; */
+}
+/* Breakpoints: pontos de virada. Quando muda de tela.
+
+Tudo antes desses breakpoints é para smartphone.
+Mobile First.
+576px - menor tablet
+768px - tablets e telas de monitores corporativos ou monitores mais antigos
+992px - muitos monitores atuais
+1200px - a maioria dos novos computadores
+1600px - Telas maiores
+2520px - Telas gigantes
+
+mydevice.io
+ */
+@media (min-width:768px){
+    body > .container  {
+        flex-direction: column;
+        flex-wrap: wrap;
+        & > div {
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
+
+/* 1200px */
+/* largura e altura do container 100% */
+/* largura e altura das divs 500px flex-wrap wrap - row */
+@media (min-width:1200px){
+    body > .container  {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        & > div {
+            width: 300px;
+            height: 300px;
+        }
+    }
+}
+/* 1920px */
+/* largura e altura do container 100% */
+/* largura e altura das divs 700px flex-wrap wrap - row */
+@media (min-width:1920px){
+    body > .container  {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        & > div {
+            width: 700px;
+            height: 700px;
+        }
+    }
+}

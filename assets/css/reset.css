@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin:0;
+    padding:0;
+    outline: none;
+    font-family: arial;
+}
+
+/* 
+
+initial - volte ao valor inicial
+inherit - herança explicita
+unset - desligar
+
+.menu {
+    margin-top: 50px;
+    color: red;
+}
+@media (min-width: 768px){
+    .menu {
+        margin-top: unset;
+        color: unset;
+    }
+    
+}
+
+
+*/

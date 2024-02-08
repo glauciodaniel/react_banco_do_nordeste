@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <header>
+        <h1>Formulários</h1>
+        <!-- Em HTML exitem dois tipos de tag ou elemento.
+        Elemento de linha - Só permite formatações de texto. cor, tamanho, fonte, etc.
+        Elemento de bloco - Permite formatações de texto e de layout. Ex. parágrafos, títulos, listas, etc.
+        A diferença básica entre eles é que o elemento de linha não aceita formatação de layout, como margem, padding, etc.
+
+        css - width: 200px; height: 200px; margin: 10px; padding: 10px; border: 1px solid #000;
+
+        w3schools.com
+        mdn - Mozilla Developer Network
+
+        a { display:block;}
+        a { display: flex;}
+        a { display: inline-block;}
+        a { display: inline-flex;}
+        
+        display: block; - Elemento de bloco
+        display: inline; - Elemento de linha
+     -->
+    </header>
+    <section>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+            label {
+                display: block;
+                width: 400px;
+                margin: 10px 0;
+            }
+            input {
+                width: 100%;
+                height: 50px;
+                border-radius: 5px;
+                border: solid 1px rgb(191, 191, 191);
+                padding: 10px;
+                margin: 10px 0;
+            }
+            button {
+                height: 50px;
+            }
+            * {
+                box-sizing: border-box;
+            }
+        </style>
+        <!-- POST é uma propriedade no header da requisição.
+        https:// - SSL certificado digital de servidor web. Garantir autenticidade. Criptografia - 300.000.000.000 -->
+        <!-- Regex 01311-100 -->
+        <form action="form.php" method="post">
+            <label for="nome">Nome:
+                <input type="text" name="nome" id="nome" required>
+            </label>
+            
+            <label for="email">Email:
+            <input type="email" name="email" id="email" placeholder="seu@email.com" required>
+            </label>
+            
+            <label for="senha">Senha:
+                <input type="password" name="senha" id="senha" pattern="[0-9]{6}" required>
+            </label>
+            <input type="hidden" id="temptoken" value="3423423rewrewrerwerr23424423">
+
+            <button type="submit">Enviar</button>
+            <!-- 
+                SQL Injection
+                Cross Site Scripting (XSS)
+                Cross Site Request Forgery (CSRF)
+             -->
+            <br>
+        </form>
+    </section>
+</body>
+</html>
